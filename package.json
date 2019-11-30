@@ -2,14 +2,18 @@
   "name": "demo",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://eugenekim000.github.io/react360Demo",
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",
-    "bundle": "node node_modules/react-360/scripts/bundle.js",
     "open": "node -e \"require('xopen')('http://localhost:8081/index.html')\"",
     "devtools": "react-devtools",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "yarn run build",
+    "deploy": "node node_modules/react-360/scripts/deploy.js",
+    "bundle": "node node_modules/react-360/scripts/bundle.js && sh       node_modules/react-360/scripts/copy_assets.sh"
   },
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "16.3.2",
     "react-360": "^1.1.0",
     "react-360-web": "~1.1.0",
